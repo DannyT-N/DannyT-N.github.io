@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>danieltoledo-navarro.com</title>
+<style>
+  :root{
+    --ink:#0B0B0F;
+    --paper:#FAFAF7;
+    --crimson:#C8102E;
+    --navy:#00234A;
+    --gray:#6B6B6B;
+    --line:#E3E1DA;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    background:var(--paper);
+    color:var(--ink);
+    font-family:'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    line-height:1.5;
+    -webkit-font-smoothing:antialiased;
+  }
+  @media (prefers-reduced-motion: reduce){
+    *{animation:none !important; transition:none !important;}
+  }
+  a{color:inherit; text-decoration:none;}
+  .wrap{max-width:1000px; margin:0 auto; padding:0 32px;}
+
+  /* NAV */
+  nav{
+    position:sticky; top:0; z-index:10;
+    background:rgba(250,250,247,0.92);
+    backdrop-filter:blur(6px);
+    border-bottom:1px solid var(--line);
+  }
+  nav .wrap{display:flex; align-items:center; justify-content:space-between; height:64px;}
+  .nav-name{font-family:'Georgia', serif; font-weight:700; letter-spacing:-0.02em; font-size:18px;}
+  .nav-links{display:flex; gap:28px; font-size:14px; font-weight:500;}
+  .nav-links a{color:var(--gray); transition:color .2s;}
+  .nav-links a:hover{color:var(--crimson);}
+
+  /* HERO */
+  header.hero{padding:96px 0 72px; border-bottom:1px solid var(--line); overflow:hidden;}
+  .eyebrow{
+    font-size:13px; letter-spacing:0.14em; text-transform:uppercase;
+    color:var(--crimson); font-weight:700; margin-bottom:18px;
+  }
+  h1{
+    font-family:'Georgia', serif;
+    font-size:clamp(40px, 7vw, 68px);
+    line-height:1.02;
+    letter-spacing:-0.02em;
+    max-width:760px;
+  }
+  h1 span{color:var(--navy);}
+  .hero-sub{
+    margin-top:22px; font-size:19px; color:var(--gray); max-width:560px;
+  }
+  .hero-links{margin-top:32px; display:flex; gap:14px; flex-wrap:wrap;}
+  .btn{
+    display:inline-block; padding:11px 22px; border-radius:2px;
+    font-size:14px; font-weight:600; border:1.5px solid var(--ink);
+    transition:all .2s;
+  }
+  .btn.primary{background:var(--ink); color:var(--paper);}
+  .btn.primary:hover{background:var(--crimson); border-color:var(--crimson);}
+  .btn.secondary:hover{background:var(--ink); color:var(--paper);}
+
+  /* ROUTE / SIGNATURE ELEMENT */
+  .route{margin-top:64px;}
+  .route-label{font-size:12px; color:var(--gray); letter-spacing:.08em; text-transform:uppercase; margin-bottom:14px;}
+  svg.route-svg{width:100%; height:auto; display:block;}
+  .route-dot{fill:var(--paper); stroke:var(--navy); stroke-width:2;}
+  .route-dot.filled{fill:var(--crimson); stroke:var(--crimson);}
+  .route-path{fill:none; stroke:var(--line); stroke-width:2; stroke-dasharray:6 6;}
+  .route-text{font-size:12px; fill:var(--ink); font-family:inherit;}
+  .route-text-sub{font-size:10.5px; fill:var(--gray);}
+
+  section{padding:72px 0; border-bottom:1px solid var(--line);}
+  section:last-of-type{border-bottom:none;}
+  .section-head{display:flex; align-items:baseline; gap:16px; margin-bottom:36px;}
+  .section-num{font-family:'Georgia', serif; font-size:14px; color:var(--crimson); font-weight:700;}
+  h2{font-family:'Georgia', serif; font-size:28px; letter-spacing:-0.01em;}
+
+  /* PROJECTS */
+  .proj-grid{display:grid; grid-template-columns:repeat(auto-fit, minmax(260px,1fr)); gap:2px; background:var(--line); border:1px solid var(--line);}
+  .proj-card{background:var(--paper); padding:26px; transition:background .2s;}
+  .proj-card:hover{background:#fff;}
+  .proj-tag{font-size:11px; text-transform:uppercase; letter-spacing:.08em; color:var(--navy); font-weight:700; margin-bottom:10px;}
+  .proj-card h3{font-size:17px; margin-bottom:8px; font-weight:600;}
+  .proj-card p{font-size:14px; color:var(--gray);}
+  .proj-note{
+    grid-column:1/-1; background:var(--paper); padding:22px 26px; font-size:14px; color:var(--gray); font-style:italic;
+  }
+
+  /* ABOUT / LEADERSHIP */
+  .about-grid{display:grid; grid-template-columns:1.2fr 1fr; gap:48px;}
+  @media (max-width:720px){.about-grid{grid-template-columns:1fr;}}
+  .about-grid p{margin-bottom:16px; color:var(--ink);}
+  .fact-list{list-style:none;}
+  .fact-list li{
+    padding:14px 0; border-bottom:1px solid var(--line); font-size:14px; display:flex; justify-content:space-between; gap:12px;
+  }
+  .fact-list li:last-child{border-bottom:none;}
+  .fact-list b{color:var(--navy);}
+
+  /* CONTACT */
+  footer{padding:64px 0 80px;}
+  footer h2{margin-bottom:14px;}
+  footer p{color:var(--gray); max-width:480px; margin-bottom:28px;}
+  .contact-links{display:flex; gap:24px; flex-wrap:wrap; font-size:14px; font-weight:600;}
+  .contact-links a{border-bottom:1.5px solid var(--crimson); padding-bottom:2px; transition:opacity .2s;}
+  .contact-links a:hover{opacity:.6;}
+  .foot-note{margin-top:48px; font-size:12px; color:var(--gray);}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <div class="nav-name">Toledo-Navarro</div>
+    <div class="nav-links">
+      <a href="#projects">Projects</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="wrap">
+    <div class="eyebrow">Newark, NJ &rarr; St. Paul&rsquo;s School &rarr; Howard University</div>
+    <h1>Daniel Toledo-Navarro <br><span>Computer Science &amp; Software Engineering.</span></h1>
+    <p class="hero-sub">Computer Science major at Howard University (Class of 2028), building toward a career in software engineering with a long-term interest in product management. Also leads community outreach for the Obama Foundation across North Jersey.</p>
+    <div class="hero-links">
+      <a class="btn primary" href="#projects">See my work</a>
+      <a class="btn secondary" href="https://github.com/DannyT-N" target="_blank" rel="noopener">GitHub</a>
+      <a class="btn secondary" href="https://linkedin.com/in/danieltoledo-navarro" target="_blank" rel="noopener">LinkedIn</a>
+    </div>
+
+    <div class="route">
+      <div class="route-label">The route so far</div>
+      <svg class="route-svg" viewBox="0 0 900 120" xmlns="http://www.w3.org/2000/svg">
+        <path class="route-path" d="M50,60 L235,60 L420,60 L605,60 L790,60"></path>
+        <circle class="route-dot filled" cx="50" cy="60" r="7"></circle>
+        <circle class="route-dot filled" cx="235" cy="60" r="7"></circle>
+        <circle class="route-dot filled" cx="420" cy="60" r="7"></circle>
+        <circle class="route-dot filled" cx="605" cy="60" r="7"></circle>
+        <circle class="route-dot" cx="790" cy="60" r="7"></circle>
+        <text class="route-text" x="50" y="30" text-anchor="middle" font-weight="700">Newark</text>
+        <text class="route-text-sub" x="50" y="96" text-anchor="middle">Home base</text>
+        <text class="route-text" x="235" y="30" text-anchor="middle" font-weight="700">St. Paul&rsquo;s School</text>
+        <text class="route-text-sub" x="235" y="96" text-anchor="middle">Class of &rsquo;24</text>
+        <text class="route-text" x="420" y="30" text-anchor="middle" font-weight="700">Howard CS</text>
+        <text class="route-text-sub" x="420" y="96" text-anchor="middle">Class of 2028</text>
+        <text class="route-text" x="605" y="30" text-anchor="middle" font-weight="700">Obama Foundation</text>
+        <text class="route-text-sub" x="605" y="96" text-anchor="middle">MBK &amp; GOA outreach</text>
+        <text class="route-text" x="790" y="30" text-anchor="middle" font-weight="700">SWE &rarr; PM</text>
+        <text class="route-text-sub" x="790" y="96" text-anchor="middle">Next stop</text>
+      </svg>
+    </div>
+  </div>
+</header>
+
+<section id="projects">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="section-num">01</span>
+      <h2>Coursework &amp; Projects</h2>
+    </div>
+    <div class="proj-grid">
+      <div class="proj-card">
+        <div class="proj-tag">Systems</div>
+        <h3>Computer Organization II Benchmark</h3>
+        <p>C programs benchmarking system performance, versioned on GitHub with a full write-up.</p>
+      </div>
+      <div class="proj-card">
+        <div class="proj-tag">Data Structures</div>
+        <h3>Priority Queues &amp; Recursion</h3>
+        <p>Coursework covering priority queue implementations, recursion optimization, and the coin-change problem.</p>
+      </div>
+      <div class="proj-card">
+        <div class="proj-tag">Security</div>
+        <h3>Caesar Cipher</h3>
+        <p>A classic cipher implementation, submitted and version-controlled on GitHub.</p>
+      </div>
+      <div class="proj-card">
+        <div class="proj-tag">Low-Level</div>
+        <h3>MIPS Assembly: Fibonacci</h3>
+        <p>Fibonacci sequence generation and input validation, written directly in MIPS assembly.</p>
+      </div>
+      <div class="proj-note">Summer 2026 project: in progress &mdash; check back soon.</div>
+    </div>
+  </div>
+</section>
+
+<section id="about">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="section-num">02</span>
+      <h2>About</h2>
+    </div>
+    <div class="about-grid">
+      <div>
+        <p>I'm a Computer Science major at Howard University, originally from Newark, NJ, and a graduate of St. Paul's School (Class of 2024). My path is aimed at software engineering, with a longer-term interest in moving into product management &mdash; I focus on building things well, and understanding why they matter.</p>
+        <p>Outside of class, I canvass door-to-door for the Obama Foundation across North Jersey communities, raising support for the My Brother's Keeper Alliance and the Girls Opportunity Alliance. It's taught me as much about clear communication as any CS course has.</p>
+        <p>I've spent over eight years mentoring middle schoolers through a Newark-based nonprofit, and I picked up golf through Howard's FairWays to Leadership program.</p>
+      </div>
+      <ul class="fact-list">
+        <li><span>Secondary School</span> <b>St. Paul&rsquo;s School, Class of 2024</b></li>
+        <li><span>University</span> <b>Howard University</b></li>
+        <li><span>Major</span> <b>Computer Science</b></li>
+        <li><span>Class</span> <b>2028</b></li>
+        <li><span>Based in</span> <b>Newark, NJ</b></li>
+        <li><span>Focus</span> <b>Software Engineering &rarr; PM</b></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<footer id="contact">
+  <div class="wrap">
+    <h2>Get in touch</h2>
+    <p>Open to opportunities in software engineering and product. Reach out through any of the below.</p>
+    <div class="contact-links">
+      <a href="mailto:daniel.toledonava@bison.howard.edu">Email</a>
+      <a href="https://linkedin.com/in/danieltoledo-navarro" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="https://github.com/DannyT-N" target="_blank" rel="noopener">GitHub</a>
+    </div>
+    <div class="foot-note">&copy; 2026 Daniel Toledo-Navarro</div>
+  </div>
+</footer>
+
+</body>
+</html>
